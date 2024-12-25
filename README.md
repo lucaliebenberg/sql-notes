@@ -92,3 +92,13 @@ RIGHT JOIN users u ON e.employee_id = u.id
 ## Full Join
 
 A FULL JOIN is like a combination of a LEFT JOIN and a RIGHT JOIN. It all rows from both tables, matching rows where possible and filling in with NULLs where there's no match.
+
+If we had a `FOREIGN KEY` constraint on `NULL`  column in the table, it would not be possible.
+
+## Multi Join
+
+We can also join more than two tables at once. In fact, this is very common in real-world applications.
+
+## Normalized Tables
+
+Relational databases promote the idea of **Normalization**. This is a process of organizing data in a way that eliminates redundant data and ensures data is consistent.
