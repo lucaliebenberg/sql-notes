@@ -35,3 +35,33 @@ The LIMIT clause is executed last. It limits the rows to only include the first 
 
 Step 7: `SELECT book_name`
 The SELECT clause is executed last. It returns only the book_name column from the table that we have filtered, grouped, and sorted.
+
+## Inner Join
+
+The `INNER JOIN` clause is used to combine rows from tables based on matching values in a specified column. By default, it will only return rows where there is a match, so we don't need to specify any additional conditions in the WHERE clause.
+
+In PostgreSQL and most other SQL databases, the `INNER JOIN` clause is equivalent to the `JOIN` clause.
+
+## Table Alias
+
+When performing a join, you can use an alias for each table to make queries more readable.
+
+```bash
+SELECT s.name, c.course_name
+FROM students AS s
+INNER JOIN course_registrations AS c ON s.id = c.student_id;
+```
+
+In the above example, the students table is aliased as s and the course_registrations table is aliased as c. We use the `AS` keyword to alias the tables, similar to how we use it to rename columns in the output result.
+
+We can also omit the `AS` keyword and just place the alias directly after the table name.
+
+```bash
+SELECT s.name, c.course_name
+FROM students s
+INNER JOIN course_registrations c ON s.id = c.student_id;
+```
+
+The above example, is equivalent to the previous example.
+
+
