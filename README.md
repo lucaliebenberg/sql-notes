@@ -89,4 +89,6 @@ FROM employment_records e
 RIGHT JOIN users u ON e.employee_id = u.id
 ```
 
+## Full Join
 
+A FULL JOIN is like a combination of a LEFT JOIN and a RIGHT JOIN. It all rows from both tables, matching rows where possible and filling in with NULLs where there's no match.
