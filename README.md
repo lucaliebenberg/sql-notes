@@ -102,3 +102,37 @@ We can also join more than two tables at once. In fact, this is very common in r
 ## Normalized Tables
 
 Relational databases promote the idea of **Normalization**. This is a process of organizing data in a way that eliminates redundant data and ensures data is consistent.
+
+We can normalize this data by creating separate tables for each **entity**.
+
+### Example dataset
+```sql
+CREATE TABLE orders (
+    user_id INTEGER,
+    user_name TEXT,
+    product_id INTEGER,
+    product_name TEXT,
+    order_id INTEGER
+);
+```
+
+Example of **normalisation**:
+```sql
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY,
+    name TEXT
+);
+
+CREATE TABLE products (
+    id INTEGER PRIMARY KEY,
+    name TEXT
+);
+
+CREATE TABLE orders (
+    id INTEGER PRIMARY KEY,
+    user_id INTEGER,
+    product_id INTEGER,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (product_id) REFERENCES products(id)
+);
+```
